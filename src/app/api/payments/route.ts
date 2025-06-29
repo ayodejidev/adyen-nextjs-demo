@@ -6,7 +6,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     const checkout = getAdyenCheckout();
 
-    const res = await checkout.payments({
+    const res = await checkout.PaymentsApi.payments({
       ...body,
       merchantAccount: process.env.ADYEN_MERCHANT_ACCOUNT!,
       returnUrl: 'http://localhost:3000/checkout',
