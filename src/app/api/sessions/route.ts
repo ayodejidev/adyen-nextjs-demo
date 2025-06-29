@@ -56,9 +56,10 @@ export async function POST() {
         mode: res.mode,
       }
     });
-  } catch (error: any) {
-    console.error('❌ Session creation failed:', error.message);
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+    console.error('❌ Session creation failed:', errorMessage);
     // Don't log the full error object as it might contain sensitive data
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 } 
