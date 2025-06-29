@@ -75,12 +75,16 @@ export default function AdyenCheckoutComponent() {
                 if (res.resultCode === 'Authorised') {
                   window.location.href = '/checkout/success';
                   return;
+                } else if (res.resultCode === 'Pending' || res.resultCode === 'Received') {
+                  window.location.href = '/checkout/pending';
+                  return;
                 } else {
-                  alert('Payment result: ' + res.resultCode);
+                  window.location.href = '/checkout/failed';
+                  return;
                 }
                 dropin.setStatus('finished');
               } else if (res.error) {
-                alert('Payment error: ' + res.error);
+                window.location.href = '/checkout/failed';
                 dropin.setStatus('error');
               }
             } catch (err: any) {
