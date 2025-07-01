@@ -18,10 +18,10 @@ export default function AdyenCheckoutComponent() {
       try {
         setIsLoading(true);
         setError(null);
-        console.log('🔧 Creating Adyen session...');
+        console.log('Creating Adyen session...');
         
         const sessionResponse = await fetch('/api/sessions', { method: 'POST' }).then(res => res.json());
-        console.log('📋 Session response (non-sensitive):', {
+        console.log('Session response (non-sensitive):', {
           sessionId: sessionResponse.session?.id,
           expiresAt: sessionResponse.session?.expiresAt,
           returnUrl: sessionResponse.session?.returnUrl,
@@ -39,7 +39,7 @@ export default function AdyenCheckoutComponent() {
         setIsReady(true);
         setIsLoading(false);
       } catch (err) {
-        console.error('❌ Session creation error:', err);
+        console.error('Session creation error:', err);
         setError('Failed to create payment session. Please refresh the page.');
         setIsLoading(false);
       }
@@ -56,7 +56,7 @@ export default function AdyenCheckoutComponent() {
 
     async function initDropin() {
       try {
-        console.log('🔧 Initializing Adyen Dropin...');
+        console.log('Initializing Adyen Dropin...');
         
         const checkout = await AdyenCheckout({
           clientKey: process.env.NEXT_PUBLIC_ADYEN_CLIENT_KEY!,
@@ -65,11 +65,11 @@ export default function AdyenCheckoutComponent() {
           analytics: { enabled: false },
           // @ts-ignore - Adyen callback types are complex
           onPaymentCompleted: (result: any) => {
-            console.log('✅ Payment completed:', result);
+            console.log('Payment completed:', result);
           },
-          onError: (error: Error) => {
-            console.error('❌ Adyen error:', error);
-            setError('Payment initialization failed. Please refresh the page.');
+                      onError: (error: Error) => {
+              console.error('Adyen error:', error);
+              setError('Payment initialization failed. Please refresh the page.');
           },
         });
 
@@ -86,8 +86,8 @@ export default function AdyenCheckoutComponent() {
           paymentMethodComponents: [Card, SepaDirectDebit],
           // @ts-ignore - Adyen onSubmit types are complex
           onSubmit: async (state: any, dropin: any) => {
-            console.log('🚀 Payment submitted');
-            console.log('📊 Payment state (non-sensitive):', {
+                    console.log('Payment submitted');
+        console.log('Payment state (non-sensitive):', {
               isValid: state.isValid,
               dataKeys: Object.keys(state.data || {}),
             });
@@ -120,8 +120,8 @@ export default function AdyenCheckoutComponent() {
                 window.location.href = '/checkout/failed';
                 dropin.setStatus('error');
               }
-            } catch (err) {
-              console.error('❌ Payment error:', err);
+                    } catch (err) {
+          console.error('Payment error:', err);
               window.location.href = '/checkout/failed';
               dropin.setStatus('error');
             }
@@ -133,9 +133,9 @@ export default function AdyenCheckoutComponent() {
         }
 
         dropin.mount(dropinRef.current);
-        console.log('✅ Adyen Dropin mounted successfully');
-      } catch (err) {
-        console.error('❌ Dropin initialization error:', err);
+        console.log('Adyen Dropin mounted successfully');
+              } catch (err) {
+          console.error('Dropin initialization error:', err);
         setError('Failed to initialize payment form. Please refresh the page.');
       }
     }
@@ -155,7 +155,7 @@ export default function AdyenCheckoutComponent() {
         }}
       >
         <div style={{ color: '#d32f2f', fontSize: '1.2rem', marginBottom: '1rem' }}>
-          ❌ {error}
+          Error: {error}
         </div>
         <button
           onClick={() => window.location.reload()}

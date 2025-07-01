@@ -79,7 +79,7 @@ Please describe the issue or feedback you have with the Adyen Next.js demo.
               marginRight: 'auto',
             }}
           >
-            A demo of Adyen Web Drop-in v6 integration with Next.js 13+ (App Router)
+            A demo of Adyen Web Drop-in v6 integration with Next.js 13+
           </p>
         </div>
 
@@ -105,23 +105,23 @@ Please describe the issue or feedback you have with the Adyen Next.js demo.
             }}
           >
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#00112c', fontSize: '1.2rem', marginRight: 12 }}>✅</span>
+              <span style={{ color: '#00112c', fontSize: '1.2rem', marginRight: 12 }}>✓</span>
               Secure session-based payment flow
             </li>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#00112c', fontSize: '1.2rem', marginRight: 12 }}>✅</span>
+              <span style={{ color: '#00112c', fontSize: '1.2rem', marginRight: 12 }}>✓</span>
               Card & SEPA Direct Debit support
             </li>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#00112c', fontSize: '1.2rem', marginRight: 12 }}>✅</span>
+              <span style={{ color: '#00112c', fontSize: '1.2rem', marginRight: 12 }}>✓</span>
               Outcome pages for success, pending, and failed payments
             </li>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#00112c', fontSize: '1.2rem', marginRight: 12 }}>✅</span>
+              <span style={{ color: '#00112c', fontSize: '1.2rem', marginRight: 12 }}>✓</span>
               Modern, accessible UI with brand consistency
             </li>
             <li style={{ marginBottom: '0.75rem', display: 'flex', alignItems: 'center' }}>
-              <span style={{ color: '#00112c', fontSize: '1.2rem', marginRight: 12 }}>✅</span>
+              <span style={{ color: '#00112c', fontSize: '1.2rem', marginRight: 12 }}>✓</span>
               Secure API routes with environment variable management
             </li>
           </ul>
@@ -171,7 +171,7 @@ Please describe the issue or feedback you have with the Adyen Next.js demo.
                 margin: '0 0 1rem 0',
               }}
             >
-              📚 Adyen Documentation
+              Adyen Documentation
             </h3>
             <div
               style={{

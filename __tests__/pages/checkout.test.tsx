@@ -100,6 +100,6 @@ describe('CheckoutPage', () => {
     
     const securityMessage = getByText(/Your payment information is encrypted and secure/)
     expect(securityMessage).toBeInTheDocument()
-    expect(securityMessage).toHaveTextContent('🔒')
+    expect(securityMessage).toHaveTextContent('Your payment information is encrypted and secure')
   })
 }) 

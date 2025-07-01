@@ -45,7 +45,7 @@ export default function CheckoutSuccess() {
           }}
           tabIndex={-1}
         >
-          🎉 Payment Successful!
+          Payment Successful!
         </h1>
         <p
           style={{

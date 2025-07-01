@@ -133,7 +133,7 @@ describe('AdyenCheckoutComponent', () => {
     render(<AdyenCheckoutComponent />)
     
     await waitFor(() => {
-      expect(consoleSpy).toHaveBeenCalledWith('🔧 Creating Adyen session...')
+      expect(consoleSpy).toHaveBeenCalledWith('Creating Adyen session...')
     }, { timeout: 3000 })
     
     consoleSpy.mockRestore()
@@ -146,7 +146,7 @@ describe('AdyenCheckoutComponent', () => {
     
     await waitFor(() => {
       expect(consoleSpy).toHaveBeenCalledWith(
-        '📋 Session response (non-sensitive):',
+        'Session response (non-sensitive):',
         expect.objectContaining({
           sessionId: 'test-session-id'
         })

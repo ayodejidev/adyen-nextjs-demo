@@ -3,9 +3,9 @@ import { getAdyenCheckout } from '@/utils/adyenClient';
 
 export async function POST() {
   try {
-    console.log('🔧 Creating Adyen session...');
-    console.log('🔑 Merchant Account:', process.env.ADYEN_MERCHANT_ACCOUNT);
-    console.log('🔑 API Key exists:', !!process.env.ADYEN_API_KEY);
+    console.log('Creating Adyen session...');
+    console.log('Merchant Account:', process.env.ADYEN_MERCHANT_ACCOUNT);
+    console.log('API Key exists:', !!process.env.ADYEN_API_KEY);
     
     const checkout = getAdyenCheckout();
 
@@ -18,7 +18,7 @@ export async function POST() {
       reference: `order_${Date.now()}`,
     };
 
-    console.log('📋 Session request (non-sensitive):', {
+    console.log('Session request (non-sensitive):', {
       merchantAccount: sessionRequest.merchantAccount,
       countryCode: sessionRequest.countryCode,
       shopperLocale: sessionRequest.shopperLocale,
@@ -29,8 +29,8 @@ export async function POST() {
 
     const res = await checkout.PaymentsApi.sessions(sessionRequest);
     
-    console.log('✅ Session created successfully');
-    console.log('📋 Session response (non-sensitive):', {
+    console.log('Session created successfully');
+    console.log('Session response (non-sensitive):', {
       id: res.id,
       expiresAt: res.expiresAt,
       returnUrl: res.returnUrl,
@@ -58,7 +58,7 @@ export async function POST() {
     });
   } catch (error: unknown) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-    console.error('❌ Session creation failed:', errorMessage);
+    console.error('Session creation failed:', errorMessage);
     // Don't log the full error object as it might contain sensitive data
     return NextResponse.json({ error: errorMessage }, { status: 500 });
   }

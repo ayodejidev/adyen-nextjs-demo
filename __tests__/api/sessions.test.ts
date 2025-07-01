@@ -101,10 +101,10 @@ describe('/api/sessions', () => {
 
     await POST()
 
-    expect(consoleSpy).toHaveBeenCalledWith('🔧 Creating Adyen session...')
-    expect(consoleSpy).toHaveBeenCalledWith('🔑 Merchant Account:', 'test_merchant_account')
-    expect(consoleSpy).toHaveBeenCalledWith('🔑 API Key exists:', true)
-    expect(consoleSpy).toHaveBeenCalledWith('✅ Session created successfully')
+    expect(consoleSpy).toHaveBeenCalledWith('Creating Adyen session...')
+    expect(consoleSpy).toHaveBeenCalledWith('Merchant Account:', 'test_merchant_account')
+    expect(consoleSpy).toHaveBeenCalledWith('API Key exists:', true)
+    expect(consoleSpy).toHaveBeenCalledWith('Session created successfully')
 
     consoleSpy.mockRestore()
   })

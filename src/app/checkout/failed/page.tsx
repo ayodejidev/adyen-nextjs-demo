@@ -44,7 +44,7 @@ export default function CheckoutFailed() {
           }}
           tabIndex={-1}
         >
-          ❌ Payment Failed
+          Payment Failed
         </h1>
         <p
           style={{
