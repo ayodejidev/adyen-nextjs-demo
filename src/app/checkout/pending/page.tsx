@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-export default function CheckoutSuccess() {
+export default function CheckoutPending() {
   const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function CheckoutSuccess() {
         justifyContent: 'center',
         fontFamily: 'Inter, Roboto, Open Sans, Arial, sans-serif',
       }}
-      aria-labelledby="success-heading"
+      aria-labelledby="pending-heading"
     >
       <div
         style={{
@@ -34,7 +34,7 @@ export default function CheckoutSuccess() {
         }}
       >
         <h1
-          id="success-heading"
+          id="pending-heading"
           ref={headingRef}
           style={{
             fontFamily: 'JetBrains Mono, Fira Code, IBM Plex Mono, monospace',
@@ -45,7 +45,7 @@ export default function CheckoutSuccess() {
           }}
           tabIndex={-1}
         >
-          Payment Successful!
+          ⏳ Payment Pending
         </h1>
         <p
           style={{
@@ -55,7 +55,7 @@ export default function CheckoutSuccess() {
             lineHeight: 1.6,
           }}
         >
-          Thank you for your purchase. Your payment was processed successfully.
+          Your payment is being processed. You will receive an update soon.
         </p>
         <Link
           href="/"

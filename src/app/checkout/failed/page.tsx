@@ -1,8 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import Link from 'next/link';
 
-export default function CheckoutSuccess() {
+export default function CheckoutFailed() {
   const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -20,7 +19,7 @@ export default function CheckoutSuccess() {
         justifyContent: 'center',
         fontFamily: 'Inter, Roboto, Open Sans, Arial, sans-serif',
       }}
-      aria-labelledby="success-heading"
+      aria-labelledby="failed-heading"
     >
       <div
         style={{
@@ -34,7 +33,7 @@ export default function CheckoutSuccess() {
         }}
       >
         <h1
-          id="success-heading"
+          id="failed-heading"
           ref={headingRef}
           style={{
             fontFamily: 'JetBrains Mono, Fira Code, IBM Plex Mono, monospace',
@@ -45,7 +44,7 @@ export default function CheckoutSuccess() {
           }}
           tabIndex={-1}
         >
-          Payment Successful!
+          Payment Failed
         </h1>
         <p
           style={{
@@ -55,10 +54,10 @@ export default function CheckoutSuccess() {
             lineHeight: 1.6,
           }}
         >
-          Thank you for your purchase. Your payment was processed successfully.
+          Your payment could not be processed. Please try again or use a different payment method.
         </p>
-        <Link
-          href="/"
+        <a
+          href="/checkout"
           style={{
             display: 'inline-block',
             background: '#00112c',
@@ -73,14 +72,14 @@ export default function CheckoutSuccess() {
             outline: 'none',
           }}
           tabIndex={0}
-          aria-label="Return to home"
+          aria-label="Return to checkout"
           onFocus={e => (e.currentTarget.style.background = '#1a2b4a')}
           onBlur={e => (e.currentTarget.style.background = '#00112c')}
           onMouseEnter={e => (e.currentTarget.style.background = '#1a2b4a')}
           onMouseLeave={e => (e.currentTarget.style.background = '#00112c')}
         >
-          Return to Home
-        </Link>
+          Return to Checkout
+        </a>
       </div>
     </main>
   );
