@@ -4,7 +4,7 @@ import { getAdyenCheckout } from '@/utils/adyenClient';
 export async function POST() {
   try {
     console.log('Creating Adyen session...');
-    console.log('Merchant Account:', process.env.ADYEN_MERCHANT_ACCOUNT);
+    console.log('Merchant Account is set:', !!process.env.ADYEN_MERCHANT_ACCOUNT);
     console.log('API Key exists:', !!process.env.ADYEN_API_KEY);
     
     const checkout = getAdyenCheckout();
