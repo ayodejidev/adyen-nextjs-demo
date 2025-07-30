@@ -19,7 +19,7 @@ export async function POST() {
     };
 
     console.log('Session request (non-sensitive):', {
-      merchantAccount: sessionRequest.merchantAccount,
+      merchantAccount: sessionRequest.merchantAccount.replace(/.(?=.{4})/g, '*'), // Mask all but the last 4 characters
       countryCode: sessionRequest.countryCode,
       shopperLocale: sessionRequest.shopperLocale,
       amount: sessionRequest.amount,
