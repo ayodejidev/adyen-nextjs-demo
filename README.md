@@ -14,6 +14,9 @@ A demo of Adyen Web Drop-in v6 integration with Next.js 13+ using the App Router
 - **Responsive Design**: Modern, accessible UI with brand consistency
 - **Testing**: Jest and Testing Library setup
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ayodejidev/adyen-nextjs-demo)
+
+
 ## Prerequisites
 
 - Node.js 18+ 
